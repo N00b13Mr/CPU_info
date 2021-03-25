@@ -1,0 +1,23 @@
+import os
+import platform 
+import psutil
+
+#1-Processor Information
+print "Processor Info"
+print "Processor Arch:", platform.processor()
+print "CPU Count:", psutil.cpu_count()
+
+#2-Processes Running
+print "Running Processes:"
+for p in psutil.process_iter():
+    print(p, p.name(), p.pid)
+
+#3-Users Logged
+print "Users"
+print psutil.users()
+
+#4,5-Operating System information
+print "System Information"
+print 'OS:', os.name
+print 'System:', platform.system()
+print 'Version:', platform.release()
